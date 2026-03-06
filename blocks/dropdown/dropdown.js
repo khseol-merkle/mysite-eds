@@ -51,7 +51,7 @@ export default function decorate (block) {
 	function buildDropdown (DROPDOWN_MAP) {
 		// the encompassing container
 		const dropdown = document.createElement ('div');
-		dropdown.setAttribute ('class', 'dropdown-container');
+		dropdown.setAttribute ('class', 'dropdown-block-container');
 		
 		const dropdown_label = document.createElement ('div');
 		dropdown_label.setAttribute ('id', `dropdown-${uuid}`);
