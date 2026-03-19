@@ -63,6 +63,7 @@ export default function decorate (block) {
 		dropdown_combobox.setAttribute ('role', 'combobox');
 		dropdown_combobox.setAttribute ('aria-expanded', 'false');
 		dropdown_combobox.setAttribute ("aria-labelledby", `${dropdown_label.id}`);
+		dropdown_combobox.setAttribute ('tabindex', '0');
 		dropdown_combobox.textContent = DROPDOWN_MAP.get ('label');
 		
 		const dropdown_options_list = document.createElement ('div');
@@ -111,10 +112,13 @@ export default function decorate (block) {
 	 * @param dropdown_options_list
 	 */
 	function setControls (dropdown_combobox, dropdown_options_list) {
-		dropdown_combobox.addEventListener ('click', ()=>{
-			dropdown_options_list.classList.toggle ("open");
-			dropdown_combobox.setAttribute ('aria-expanded', dropdown_options_list.classList.contains ("open") ? "true" : "false");
-		});
+		dropdown_combobox.addEventListener ('click', openDropdown);
+		dropdown_combobox.addEventListener ('keydown', (e)=>{
+			let key = e.keyCode || e.which;
+			if (key === KEY_CODES.ENTER || key === KEY_CODES.ARROW_DOWN) {
+				openDropdown ();
+			}
+		})
 		
 		const options = dropdown_options_list.querySelectorAll ('.dropdown-option');
 		options.forEach ((option)=>{
@@ -129,6 +133,13 @@ export default function decorate (block) {
 				option.ariaSelected = "true";
 				console.log ("option selected");
 			});
-		})
+		});
+		
+		function openDropdown () {
+			dropdown_options_list.classList.toggle ("open");
+			dropdown_combobox.setAttribute ('aria-expanded', dropdown_options_list.classList.contains ("open") ? "true" : "false");
+			//set the focus on the comb box
+			dropdown_combobox.focus ();
+		}
 	}
 }
