@@ -372,6 +372,10 @@ main .section.inverse a.button:any-link:not(.secondary, .accent):hover {
   box-shadow: 6px 6px 0 0 rgb(255 255 255 / 30%);
 }
 
+main .section.accent {
+  background-color: #f4fe8b;
+}
+
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
