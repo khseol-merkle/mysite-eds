@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-article",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-25T15:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site",
+    "originPage": "homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "featured-article",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + breadcrumbs + heading + author + date",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured article previews",
+      "case study highlights",
+      "content with image and metadata"
+    ],
+    "notSuitableFor": [
+      "multi-row column layouts",
+      "icon-based feature lists",
+      "pricing comparisons"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-25T15:24:00.000Z"
+  }
+}
