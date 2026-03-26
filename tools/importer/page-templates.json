@@ -131,6 +131,101 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "fashion-trends",
+      "urls": [
+        "https://wknd-trendsetters.site/fashion-trends-of-the-season"
+      ],
+      "description": "Fashion trends landing page with hero, featured article, trend cards, photo gallery, and CTA",
+      "blocks": [
+        {
+          "name": "hero-showcase",
+          "instances": [
+            "header.section.secondary-section"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "main > section:nth-of-type(1) .grid-layout.tablet-1-column.grid-gap-lg"
+          ]
+        },
+        {
+          "name": "cards-trend",
+          "instances": [
+            "main > section:nth-of-type(2) .grid-layout.desktop-3-column"
+          ]
+        },
+        {
+          "name": "cards-gallery",
+          "instances": [
+            "main > section:nth-of-type(3) .grid-layout.desktop-3-column"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": "header.section.secondary-section",
+          "style": "secondary",
+          "blocks": [
+            "hero-showcase"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Featured Article",
+          "selector": "main > section:nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": [
+            "main > section:nth-of-type(1) .utility-text-align-center h2",
+            "main > section:nth-of-type(1) .utility-text-align-center .paragraph-lg"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Trend Cards",
+          "selector": "main > section:nth-of-type(2)",
+          "style": "secondary",
+          "blocks": [
+            "cards-trend"
+          ],
+          "defaultContent": [
+            "main > section:nth-of-type(2) .utility-text-align-center h2"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Photo Gallery",
+          "selector": "main > section:nth-of-type(3)",
+          "style": null,
+          "blocks": [
+            "cards-gallery"
+          ],
+          "defaultContent": [
+            "main > section:nth-of-type(3) .utility-text-align-center h2",
+            "main > section:nth-of-type(3) .utility-text-align-center .paragraph-lg"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "CTA Banner",
+          "selector": "main > section:nth-of-type(4)",
+          "style": "accent",
+          "blocks": [],
+          "defaultContent": [
+            "main > section:nth-of-type(4) .utility-text-align-center h2",
+            "main > section:nth-of-type(4) .utility-text-align-center .paragraph-lg",
+            "main > section:nth-of-type(4) .button-group a.button"
+          ]
+        }
+      ]
     }
   ]
 }
