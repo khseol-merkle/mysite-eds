@@ -1,0 +1,125 @@
+:root {
+    /* fonts */
+    --body-font-family: "proxima-nova";
+    --heading-font-family: "proxima-nova";
+
+    /* colors */
+    --background-color: transparent;
+
+    /* Greys */
+    --black: #05051E;
+    --dark-gray: #60607D;
+    --dark-gray-tint: #8888A1;
+    --mid-gray: #AEAEBC;
+    --mid-gray-tint: #D6D6DF;
+    --light-gray: #E5E5E9;
+    --light-gray-tint: #F2F2F4;
+
+    /* Blues */
+    --blue-tone-3: #080E2E;
+    --blue-tone-2: #0A1540;
+    --blue-tone-1: #0A1E50;
+    --blue: #12295D;
+    --blue-tint-1: #41547D;
+    --blue-tint-2: #8693AF;
+    --blue-tint-3: #C2C9D7;
+
+    /* Reds */
+    --red-tone-2: #470D1E;
+    --red-tone-1: #861217;
+    --red: #F23A1D;
+    --red-tint-1: #FF644C;
+    --red-tint-2: #FF9788;
+    --red-tint-3: #FFCBC4;
+
+    /* Purples */
+    --purple-tone-2: #1F054B;
+    --purple-tone-1: #350976;
+    --purple: #5B19C4;
+    --purple-tint-1: #996DDF;
+    --purple-tint-2: #B387E7;
+    --purple-tint-3: #DAC3F3;
+
+    /* Teals */
+    --teal-tone-2: #002138;
+    --teal-tone-1: #003D50;
+    --teal: #06757E;
+    --teal-tint-1: #439CA3;
+    --teal-tint-2: #71BBBF;
+    --teal-tint-3: #B9DDDF;
+
+    /* Turquoises */
+    --turquoise-tone-2: #17627A;
+    --turquoise-tone-1: #21A2AD;
+    --turquoise: #00CACF;
+    --turquoise-tint-1: #A2F9FB;
+    --turquoise-tint-2: #C5FEFE;
+    --turquoise-tint-3: #E3FFFE;
+
+    /* Yellows */
+    --yellow-tone-1: #79643A;
+    --yellow: #FFDC69;
+    --yellow-tint-1: #FFF3CD;
+    --yellow-tint-2: #FFF9E4;
+
+
+    /* button typography size */
+    --button-font-size: 16px;
+    --button-line-height: 16px;
+
+    /* body sizes */
+    --body-font-size: 16px;
+    --body-line-height: 16px;
+    --body-bold-line-height: 20px;
+
+    --caption-font-size: 12px;
+    --caption-line-height: 16px;
+
+    /* heading sizes */
+    --heading-xxl-desktop-font-size: 52px;
+    --heading-xxl-desktop-line-height: 56px;
+    --heading-xxl-mobile-font-size: 44px;
+    --heading-xxl-mobile-line-height: 40px;
+
+    --heading-xl-desktop-font-size: 44px;
+    --heading-xl-desktop-line-height: 48px;
+    --heading-xl-mobile-font-size: 36px;
+    --heading-xl-mobile-line-height: 36px;
+
+    --heading-l-desktop-font-size: 37px;
+    --heading-l-desktop-line-height: 40px;
+    --heading-l-mobile-font-size: 28px;
+    --heading-l-mobile-line-height: 32px;
+
+    --heading-m-desktop-font-size: 32px;
+    --heading-m-desktop-line-height: 32px;
+    --heading-m-mobile-font-size: 24px;
+    --heading-m-mobile-line-height: 24px;
+
+    --heading-s-desktop-font-size: 26px;
+    --heading-s-desktop-line-height: 32px;
+    --heading-s-mobile-font-size: 20px;
+    --heading-s-mobile-line-height: 24px;
+
+    --heading-xs-desktop-font-size: 21px;
+    --heading-xs-desktop-line-height: 24px;
+    --heading-xs-mobile-font-size: 18px;
+    --heading-xs-mobile-line-height: 24px;
+
+    /* nav height */
+    --nav-height: 64px;
+
+    --mobile-breakpoint: 375px;
+    --tablet-breakpoint: 768px;
+    --desktop-breakpoint: 1280px;
+    --desktop-xl-breakpoint: 1920px;
+
+    /* Text Color - defaults */
+    --text-color: var(--black);
+    --text-color-dark: var(--light-gray-tint);
+
+    /* Button Color -defaults */
+    --link-text-color: var(--black);
+    --link-text-color-dark: var(--light-gray-tint);
+
+}
