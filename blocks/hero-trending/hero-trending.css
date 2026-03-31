@@ -40,6 +40,12 @@
   height: 100%;
 }
 
+.hero-trending h1,
+.hero-trending.no-image h1 {
+  color: #996DDF;
+  font-weight: 900;
+}
+
 @media (width >= 900px) {
   .hero-trending {
     padding: 40px 32px;
