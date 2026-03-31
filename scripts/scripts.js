@@ -84,6 +84,13 @@ function decorateButtons(main) {
     const p = a.closest('p');
     const text = a.textContent.trim();
 
+    // start of my button changes
+    const buttonText = document.createElement('span');
+    buttonText.textContent = text;
+    buttonText.className = 'button-text';
+	buttonText.setAttribute('data-animation-text', text);
+    // end of the button changes
+
     // quick structural checks
     if (a.querySelector('img') || p.textContent.trim() !== text) return;
 
@@ -110,6 +117,9 @@ function decorateButtons(main) {
       a.classList.add('secondary');
       em.replaceWith(a);
     }
+    // start of my button change
+    a.replaceChildren(buttonText);
+    // end of my button change
   });
 }
 

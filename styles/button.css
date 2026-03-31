@@ -4,7 +4,7 @@ a {
   width: fit-content;
   display: inline-block;
 }
-a :after {
+a:after {
   content: "";
   height: 3px;
   background: var(--red);
@@ -15,12 +15,57 @@ a :after {
   display: block;
   transition: transform 0.25s ease-out;
 }
-a:hover :after {
+a:hover:after {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transform-origin: bottom left;
   transform-origin: bottom left;
   transition: transform 0.25s ease-out;
+}
+a.button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin: 0;
+  border-radius: 4px;
+  padding: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  font: normal 700 var(--button-font-size)/var(--button-line-height) var(--body-font-family);
+}
+a.button.primary {
+  background-color: var(--background-color);
+  color: var(--link-text-color);
+  transition-property: color, background;
+  transition-duration: 0.35s;
+  transition-timing-function: ease;
+}
+a.button.primary .button-text {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  transition-property: top;
+  transition-duration: 0.35s;
+  transition-timing-function: ease;
+}
+a.button.primary .button-text::before {
+  content: attr(data-animation-text); /*This attribute must be added to CTAs. Populate with CTA text.*/
+  position: absolute;
+  top: -48px;
+}
+a.button.primary:hover {
+  color: var(--red-tint-1);
+  background: var(--blue);
+}
+a.button.primary:hover .button-text {
+  top: 48px;
+}
+a.button.primary:hover:active {
+  background: var(--blue-tone-1);
 }
 
 /*# sourceMappingURL=button.css.map */

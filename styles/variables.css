@@ -120,6 +120,10 @@
 
     /* Button Color -defaults */
     --link-text-color: var(--black);
+    --link-text-color-hover: var(--red-tint-1);
     --link-text-color-dark: var(--light-gray-tint);
+
+    --button-color: var(--black);
+    --button-color-dark: var(--light-gray-tint);
 
 }
