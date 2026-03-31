@@ -1,58 +1,107 @@
-.tabs-testimonial .tabs-testimonial-list {
+.tabs-testimonial {
   display: flex;
-  gap: 0.5ch;
-  max-width: 100%;
-  font-size: var(--body-font-size-xs);
-  overflow-x: auto;
+  flex-direction: column;
+  gap: var(--space-xl);
 }
 
-@media (width >= 600px) {
-  .tabs-testimonial .tabs-testimonial-list {
-    font-size: var(--body-font-size-s);
-  }
-}
-
-@media (width >= 900px) {
-  .tabs-testimonial .tabs-testimonial-list {
-    font-size: var(--body-font-size-m);
-  }
+.tabs-testimonial .tabs-testimonial-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
 }
 
 .tabs-testimonial .tabs-testimonial-list button {
-  flex: 0 0 max-content;
+  display: block;
   margin: 0;
-  border: 1px solid #dadada;
-  border-radius: 0;
-  padding: 0.5em;
-  background-color: var(--light-color);
-  color: initial;
-  font-weight: bold;
-  line-height: unset;
-  text-align: initial;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
   text-overflow: unset;
   overflow: unset;
   white-space: unset;
-  transition: background-color 0.2s;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: none;
+}
+
+.tabs-testimonial .tabs-testimonial-list button:hover {
+  border-color: var(--color-gray-300);
+  transform: none;
+  box-shadow: none;
 }
 
 .tabs-testimonial .tabs-testimonial-list button p {
   margin: 0;
 }
 
-
 .tabs-testimonial .tabs-testimonial-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
+  border-color: var(--color-black);
+  background-color: var(--color-gray-100);
   cursor: initial;
 }
 
 .tabs-testimonial .tabs-testimonial-panel {
-  margin-top: -1px;
-  padding: 24px;
-  border: 1px solid #dadada;
+  margin: 0;
+  padding: 0;
+  border: none;
   overflow: auto;
 }
 
 .tabs-testimonial .tabs-testimonial-panel[aria-hidden='true'] {
   display: none;
+}
+
+.tabs-testimonial .tabs-testimonial-panel > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- targets different DOM subtree than .tabs-testimonial-list button p */
+.tabs-testimonial .tabs-testimonial-panel p {
+  margin: 0;
+}
+
+.tabs-testimonial .tabs-testimonial-panel p:first-child {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.tabs-testimonial .tabs-testimonial-panel img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.tabs-testimonial .tabs-testimonial-panel p:last-child {
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+@media (width >= 600px) {
+  .tabs-testimonial .tabs-testimonial-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-testimonial .tabs-testimonial-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tabs-testimonial .tabs-testimonial-panel > div {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+  }
 }

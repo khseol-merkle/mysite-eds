@@ -5,43 +5,81 @@
 
 .hero-trending {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-3xl) var(--container-padding);
+  min-height: 400px;
 }
 
-.hero-trending h1,
-.hero-trending h2,
-.hero-trending h3,
-.hero-trending h4,
-.hero-trending h5,
-.hero-trending h6,
-.hero-trending p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+.hero-trending > div:first-child {
+  display: none;
 }
 
-.hero-trending.no-image * {
-  color: var(--text-color);
+.hero-trending > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-trending > div:last-child > div:first-child h1 {
+  margin: 0;
+}
+
+.hero-trending > div:last-child > div:nth-child(2) {
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--color-gray-500);
+  max-width: 600px;
+}
+
+.hero-trending .hero-trending-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
 }
 
 .hero-trending picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  display: none;
 }
 
 .hero-trending img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  display: none;
 }
 
 @media (width >= 900px) {
   .hero-trending {
-    padding: 40px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    padding: var(--space-4xl) 32px;
+    align-items: center;
+    min-height: 500px;
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+
+  .hero-trending > div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-md);
+    order: 1;
+  }
+
+  .hero-trending > div:first-child picture {
+    display: block;
+  }
+
+  .hero-trending > div:first-child img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+  }
+
+  .hero-trending > div:last-child {
+    order: 0;
   }
 }

@@ -45,5 +45,6 @@ export default async function decorate(block) {
     tab.remove();
   });
 
-  block.prepend(tablist);
+  // Append tablist AFTER panels (content first, tabs below)
+  block.append(tablist);
 }
