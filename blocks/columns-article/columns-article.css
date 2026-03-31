@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.columns-article h2 {
+  color: cadetblue;
+}
+
 .columns-article img {
   width: 100%;
 }
