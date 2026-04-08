@@ -111,7 +111,7 @@ export default function decorate(block) {
   closeBtn.setAttribute('aria-label', 'Close modal');
   closeBtn.innerHTML = '&#x2715;';
 
-  // dialog
+  // creating the modal dialog
   const dialog = document.createElement('div');
   dialog.className = 'modal-dialog';
   dialog.setAttribute('role', 'dialog');
