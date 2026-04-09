@@ -111,7 +111,7 @@ export default function decorate(block) {
   closeBtn.setAttribute('aria-label', 'Close modal');
   closeBtn.innerHTML = '&#x2715;';
 
-  // modal dialog
+  // creating the modal dialog
   const dialog = document.createElement('div');
   dialog.className = 'modal-dialog';
   dialog.setAttribute('role', 'dialog');
@@ -155,11 +155,10 @@ export default function decorate(block) {
   // focus trap
   trapFocus(overlay);
 
-  // use event delegation on document to catch clicks on trigger links
+  // use event delegation on document to catch clicks on trigger buttons
   // this ensures clicks work even if triggers are added after the modal decorates
-  const hash = `#${modalId}`;
   document.addEventListener('click', (e) => {
-    const trigger = e.target.closest(`a[href="${hash}"], a[href$="${hash}"]`);
+    const trigger = e.target.closest(`button[data-modal-trigger="${modalId}"]`);
     if (trigger) {
       e.preventDefault();
       e.stopPropagation();

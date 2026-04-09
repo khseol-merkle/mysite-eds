@@ -115,7 +115,11 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  let navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  // resolve nav relative to content root when served from /content/
+  if (!navMeta && window.location.pathname.startsWith('/content/')) {
+    navPath = '/content/nav';
+  }
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -135,6 +139,16 @@ export default async function decorate(block) {
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
+  }
+
+  // add logo icon to brand
+  if (navBrand) {
+    const brandAnchor = navBrand.querySelector('a');
+    if (brandAnchor) {
+      const logoIcon = document.createElement('span');
+      logoIcon.className = 'nav-logo-icon';
+      brandAnchor.prepend(logoIcon);
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');

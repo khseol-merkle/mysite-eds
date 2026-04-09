@@ -1,0 +1,49 @@
+[
+  {
+    "id": "section",
+    "components": [
+      "hero",
+      "hero-trending",
+      "hero-banner",
+      "cards",
+      "cards-gallery",
+      "cards-article",
+      "columns",
+      "columns-article",
+      "tabs-testimonial",
+      "accordion-faq",
+      "modal",
+      "fragment"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "cards"
+    ]
+  },
+  {
+    "id": "cards-gallery",
+    "components": [
+      "cards-gallery"
+    ]
+  },
+  {
+    "id": "cards-article",
+    "components": [
+      "cards-article"
+    ]
+  },
+  {
+    "id": "tabs-testimonial",
+    "components": [
+      "tabs-testimonial"
+    ]
+  },
+  {
+    "id": "accordion-faq",
+    "components": [
+      "accordion-faq"
+    ]
+  }
+]
