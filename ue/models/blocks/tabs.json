@@ -1,0 +1,75 @@
+{
+  "definitions": [
+    {
+      "title": "Tabs Testimonial",
+      "id": "tabs-testimonial",
+      "model": "tabs-testimonial",
+      "filter": "tabs-testimonial",
+      "plugins": {
+        "da": {
+          "columns": 1,
+          "rows": 2
+        }
+      }
+    },
+    {
+      "title": "Testimonial Item",
+      "id": "tabs-testimonial-item",
+      "model": "tabs-testimonial-item",
+      "plugins": {
+        "da": {
+          "columns": 0,
+          "rows": 2,
+          "fields": [
+            { "name": "tabLabel", "selector": "div:nth-child(1)" },
+            { "name": "content", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "tabs-testimonial-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "tabLabel",
+          "valueType": "string",
+          "label": "Tab Label"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "name",
+          "label": "Name"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "role",
+          "label": "Role"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "quote",
+          "label": "Quote"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "tabs-testimonial",
+      "components": ["tabs-testimonial-item"]
+    }
+  ]
+}

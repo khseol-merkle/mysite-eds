@@ -1,186 +1,38 @@
 {
   "groups": [
     {
-      "title": "Content",
-      "id": "content",
+      "title": "Default Content",
+      "id": "default",
       "components": [
         {
-          "title": "Hero",
-          "id": "hero",
+          "title": "Text",
+          "id": "text",
+          "model": "text",
           "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Hero",
-                  "model": "hero"
-                }
-              }
+            "da": {
+              "name": "text",
+              "type": "text"
             }
           }
         },
         {
-          "title": "Hero Trending",
-          "id": "hero-trending",
+          "title": "Image",
+          "id": "image",
+          "model": "image",
           "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Hero Trending",
-                  "model": "hero-trending"
+            "da": {
+              "name": "image",
+              "type": "image",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "img[alt]"
                 }
-              }
-            }
-          }
-        },
-        {
-          "title": "Hero Banner",
-          "id": "hero-banner",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Hero Banner",
-                  "model": "hero-banner"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Cards",
-          "id": "cards",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Cards",
-                  "model": "cards"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Cards Gallery",
-          "id": "cards-gallery",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Cards Gallery",
-                  "model": "cards-gallery"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Cards Article",
-          "id": "cards-article",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Cards Article",
-                  "model": "cards-article"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Columns",
-          "id": "columns",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Columns",
-                  "model": "columns"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Columns Article",
-          "id": "columns-article",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Columns Article",
-                  "model": "columns-article"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Tabs Testimonial",
-          "id": "tabs-testimonial",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Tabs Testimonial",
-                  "model": "tabs-testimonial"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Accordion Faq",
-          "id": "accordion-faq",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Accordion Faq",
-                  "model": "accordion-faq"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Modal",
-          "id": "modal",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Modal",
-                  "model": "modal"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Fragment",
-          "id": "fragment",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Fragment",
-                  "model": "fragment"
-                }
-              }
+              ]
             }
           }
         }
@@ -194,13 +46,435 @@
           "title": "Section",
           "id": "section",
           "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "model": "section"
+            "da": {
+              "unsafeHTML": "<div></div>"
+            }
+          },
+          "filter": "section",
+          "model": "section"
+        }
+      ]
+    },
+    {
+      "title": "Blocks",
+      "id": "blocks",
+      "components": [
+        {
+          "title": "Accordion FAQ",
+          "id": "accordion-faq",
+          "model": "accordion-faq",
+          "filter": "accordion-faq",
+          "plugins": {
+            "da": {
+              "name": "accordion-faq",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "FAQ Item",
+          "id": "accordion-faq-item",
+          "model": "accordion-faq-item",
+          "plugins": {
+            "da": {
+              "name": "accordion-faq-item",
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "question",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "answer",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards",
+          "id": "cards",
+          "model": "cards",
+          "filter": "cards",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "model": "card",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards Gallery",
+          "id": "cards-gallery",
+          "model": "cards-gallery",
+          "filter": "cards-gallery",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Gallery Item",
+          "id": "cards-gallery-item",
+          "model": "cards-gallery-item",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Cards Article",
+          "id": "cards-article",
+          "model": "cards-article",
+          "filter": "cards-article",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Article Card",
+          "id": "cards-article-item",
+          "model": "cards-article-item",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "category",
+                  "selector": "div:nth-child(2)>p:nth-child(1)"
+                },
+                {
+                  "name": "date",
+                  "selector": "div:nth-child(2)>p:nth-child(2)"
+                },
+                {
+                  "name": "heading",
+                  "selector": "div:nth-child(2)>h3"
+                },
+                {
+                  "name": "link",
+                  "selector": "div:nth-child(2)>p:last-child>a[href]"
+                },
+                {
+                  "name": "linkText",
+                  "selector": "div:nth-child(2)>p:last-child>a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Columns",
+          "id": "columns",
+          "model": "columns",
+          "filter": "columns",
+          "plugins": {
+            "da": {
+              "name": "columns",
+              "rows": 1,
+              "columns": 2,
+              "behaviour": "columns"
+            }
+          }
+        },
+        {
+          "title": "Columns Row",
+          "id": "columns-row",
+          "model": "columns-row",
+          "filter": "columns-row",
+          "plugins": {
+            "da": {
+              "name": "columns-row",
+              "behaviour": "columns-row"
+            }
+          }
+        },
+        {
+          "title": "Columns Cell",
+          "id": "columns-cell",
+          "model": "columns-cell",
+          "filter": "columns-cell",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
+            }
+          }
+        },
+        {
+          "title": "Columns Article",
+          "id": "columns-article",
+          "model": "columns-article",
+          "filter": "columns-article",
+          "plugins": {
+            "da": {
+              "name": "columns-article",
+              "rows": 1,
+              "columns": 2,
+              "behaviour": "columns"
+            }
+          }
+        },
+        {
+          "title": "Columns Article Row",
+          "id": "columns-article-row",
+          "model": "columns-article-row",
+          "filter": "columns-article-row",
+          "plugins": {
+            "da": {
+              "name": "columns-article-row",
+              "behaviour": "columns-row"
+            }
+          }
+        },
+        {
+          "title": "Columns Article Cell",
+          "id": "columns-article-cell",
+          "model": "columns-article-cell",
+          "filter": "columns-article-cell",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
+            }
+          }
+        },
+        {
+          "title": "Fragment",
+          "id": "fragment",
+          "model": "fragment",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"fragment\"><div><div><a href=\"\"></a></div></div></div>",
+              "fields": [
+                {
+                  "name": "reference",
+                  "selector": "div>div>a[href]"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero",
+          "id": "hero",
+          "model": "hero",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"hero\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture><h1></h1></div></div></div>",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div>div>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div>div>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div>div>h1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero Trending",
+          "id": "hero-trending",
+          "model": "hero-trending",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"hero-trending\"><div><div><p><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></p><p><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></p><p><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></p></div></div><div><div><h1></h1></div><div></div><div><a href=\"\"></a></div><div><a href=\"\"></a></div></div></div>",
+              "fields": [
+                {
+                  "name": "image1",
+                  "selector": "div:nth-child(1)>div>p:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "image1Alt",
+                  "selector": "div:nth-child(1)>div>p:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "image2",
+                  "selector": "div:nth-child(1)>div>p:nth-child(2)>picture>img[src]"
+                },
+                {
+                  "name": "image2Alt",
+                  "selector": "div:nth-child(1)>div>p:nth-child(2)>picture>img[alt]"
+                },
+                {
+                  "name": "image3",
+                  "selector": "div:nth-child(1)>div>p:nth-child(3)>picture>img[src]"
+                },
+                {
+                  "name": "image3Alt",
+                  "selector": "div:nth-child(1)>div>p:nth-child(3)>picture>img[alt]"
+                },
+                {
+                  "name": "heading",
+                  "selector": "div:nth-child(2)>div:nth-child(1)>h1"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(2)>div:nth-child(2)"
+                },
+                {
+                  "name": "primaryCta",
+                  "selector": "div:nth-child(2)>div:nth-child(3)>a[href]"
+                },
+                {
+                  "name": "primaryCtaText",
+                  "selector": "div:nth-child(2)>div:nth-child(3)>a"
+                },
+                {
+                  "name": "secondaryCta",
+                  "selector": "div:nth-child(2)>div:nth-child(4)>a[href]"
+                },
+                {
+                  "name": "secondaryCtaText",
+                  "selector": "div:nth-child(2)>div:nth-child(4)>a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hero Banner",
+          "id": "hero-banner",
+          "model": "hero-banner",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"hero-banner\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></div></div><div><div><h2></h2></div><div></div><div><a href=\"\"></a></div></div></div>",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>div>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>div>picture>img[alt]"
+                },
+                {
+                  "name": "heading",
+                  "selector": "div:nth-child(2)>div:nth-child(1)>h2"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(2)>div:nth-child(2)"
+                },
+                {
+                  "name": "cta",
+                  "selector": "div:nth-child(2)>div:nth-child(3)>a[href]"
+                },
+                {
+                  "name": "ctaText",
+                  "selector": "div:nth-child(2)>div:nth-child(3)>a"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Modal",
+          "id": "modal",
+          "model": "modal",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"modal\"><div><div></div></div></div>",
+              "fields": [
+                {
+                  "name": "content",
+                  "selector": "div>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Tabs Testimonial",
+          "id": "tabs-testimonial",
+          "model": "tabs-testimonial",
+          "filter": "tabs-testimonial",
+          "plugins": {
+            "da": {
+              "columns": 1,
+              "rows": 2
+            }
+          }
+        },
+        {
+          "title": "Testimonial Item",
+          "id": "tabs-testimonial-item",
+          "model": "tabs-testimonial-item",
+          "plugins": {
+            "da": {
+              "columns": 0,
+              "rows": 2,
+              "fields": [
+                {
+                  "name": "tabLabel",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "content",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
             }
           }
         }

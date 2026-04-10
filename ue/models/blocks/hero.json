@@ -1,0 +1,275 @@
+{
+  "definitions": [
+    {
+      "title": "Hero",
+      "id": "hero",
+      "model": "hero",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"hero\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture><h1></h1></div></div></div>",
+          "fields": [
+            {
+              "name": "image",
+              "selector": "div>div>picture>img[src]"
+            },
+            {
+              "name": "imageAlt",
+              "selector": "div>div>picture>img[alt]"
+            },
+            {
+              "name": "text",
+              "selector": "div>div>h1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Hero Trending",
+      "id": "hero-trending",
+      "model": "hero-trending",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"hero-trending\"><div><div><p><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></p><p><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></p><p><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></p></div></div><div><div><h1></h1></div><div></div><div><a href=\"\"></a></div><div><a href=\"\"></a></div></div></div>",
+          "fields": [
+            {
+              "name": "image1",
+              "selector": "div:nth-child(1)>div>p:nth-child(1)>picture>img[src]"
+            },
+            {
+              "name": "image1Alt",
+              "selector": "div:nth-child(1)>div>p:nth-child(1)>picture>img[alt]"
+            },
+            {
+              "name": "image2",
+              "selector": "div:nth-child(1)>div>p:nth-child(2)>picture>img[src]"
+            },
+            {
+              "name": "image2Alt",
+              "selector": "div:nth-child(1)>div>p:nth-child(2)>picture>img[alt]"
+            },
+            {
+              "name": "image3",
+              "selector": "div:nth-child(1)>div>p:nth-child(3)>picture>img[src]"
+            },
+            {
+              "name": "image3Alt",
+              "selector": "div:nth-child(1)>div>p:nth-child(3)>picture>img[alt]"
+            },
+            {
+              "name": "heading",
+              "selector": "div:nth-child(2)>div:nth-child(1)>h1"
+            },
+            {
+              "name": "description",
+              "selector": "div:nth-child(2)>div:nth-child(2)"
+            },
+            {
+              "name": "primaryCta",
+              "selector": "div:nth-child(2)>div:nth-child(3)>a[href]"
+            },
+            {
+              "name": "primaryCtaText",
+              "selector": "div:nth-child(2)>div:nth-child(3)>a"
+            },
+            {
+              "name": "secondaryCta",
+              "selector": "div:nth-child(2)>div:nth-child(4)>a[href]"
+            },
+            {
+              "name": "secondaryCtaText",
+              "selector": "div:nth-child(2)>div:nth-child(4)>a"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Hero Banner",
+      "id": "hero-banner",
+      "model": "hero-banner",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"hero-banner\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/png\" srcset=\"\"><img loading=\"lazy\"></picture></div></div><div><div><h2></h2></div><div></div><div><a href=\"\"></a></div></div></div>",
+          "fields": [
+            {
+              "name": "image",
+              "selector": "div:nth-child(1)>div>picture>img[src]"
+            },
+            {
+              "name": "imageAlt",
+              "selector": "div:nth-child(1)>div>picture>img[alt]"
+            },
+            {
+              "name": "heading",
+              "selector": "div:nth-child(2)>div:nth-child(1)>h2"
+            },
+            {
+              "name": "description",
+              "selector": "div:nth-child(2)>div:nth-child(2)"
+            },
+            {
+              "name": "cta",
+              "selector": "div:nth-child(2)>div:nth-child(3)>a[href]"
+            },
+            {
+              "name": "ctaText",
+              "selector": "div:nth-child(2)>div:nth-child(3)>a"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hero",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "hero-trending",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image1",
+          "label": "Image 1",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "image1Alt",
+          "label": "Image 1 Alt"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image2",
+          "label": "Image 2",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "image2Alt",
+          "label": "Image 2 Alt"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image3",
+          "label": "Image 3",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "image3Alt",
+          "label": "Image 3 Alt"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "label": "Heading"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "primaryCta",
+          "label": "Primary CTA Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "primaryCtaText",
+          "label": "Primary CTA Text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "secondaryCta",
+          "label": "Secondary CTA Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "secondaryCtaText",
+          "label": "Secondary CTA Text"
+        }
+      ]
+    },
+    {
+      "id": "hero-banner",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Background Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "label": "Heading"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "cta",
+          "label": "CTA Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaText",
+          "label": "CTA Text"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
