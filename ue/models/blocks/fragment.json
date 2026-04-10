@@ -1,0 +1,34 @@
+{
+  "definitions": [
+    {
+      "title": "Fragment",
+      "id": "fragment",
+      "model": "fragment",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"fragment\"><div><div><a href=\"\"></a></div></div></div>",
+          "fields": [
+            {
+              "name": "reference",
+              "selector": "div>div>a[href]"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "fragment",
+      "fields": [
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "reference",
+          "label": "Fragment Reference"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

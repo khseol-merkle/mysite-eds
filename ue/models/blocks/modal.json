@@ -1,0 +1,34 @@
+{
+  "definitions": [
+    {
+      "title": "Modal",
+      "id": "modal",
+      "model": "modal",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"modal\"><div><div></div></div></div>",
+          "fields": [
+            {
+              "name": "content",
+              "selector": "div>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "modal",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "content",
+          "label": "Modal Content"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

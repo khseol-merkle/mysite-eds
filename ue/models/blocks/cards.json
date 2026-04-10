@@ -1,0 +1,198 @@
+{
+  "definitions": [
+    {
+      "title": "Cards",
+      "id": "cards",
+      "model": "cards",
+      "filter": "cards",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Card",
+      "id": "card",
+      "model": "card",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Cards Gallery",
+      "id": "cards-gallery",
+      "model": "cards-gallery",
+      "filter": "cards-gallery",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Gallery Item",
+      "id": "cards-gallery-item",
+      "model": "cards-gallery-item",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Cards Article",
+      "id": "cards-article",
+      "model": "cards-article",
+      "filter": "cards-article",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Article Card",
+      "id": "cards-article-item",
+      "model": "cards-article-item",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "category", "selector": "div:nth-child(2)>p:nth-child(1)" },
+            { "name": "date", "selector": "div:nth-child(2)>p:nth-child(2)" },
+            { "name": "heading", "selector": "div:nth-child(2)>h3" },
+            { "name": "link", "selector": "div:nth-child(2)>p:last-child>a[href]" },
+            { "name": "linkText", "selector": "div:nth-child(2)>p:last-child>a" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt"
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "cards-gallery-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt"
+        }
+      ]
+    },
+    {
+      "id": "cards-article-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "category",
+          "label": "Category"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "label": "Heading"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "Link Text"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "cards",
+      "components": ["card"]
+    },
+    {
+      "id": "cards-gallery",
+      "components": ["cards-gallery-item"]
+    },
+    {
+      "id": "cards-article",
+      "components": ["cards-article-item"]
+    }
+  ]
+}

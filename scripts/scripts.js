@@ -1,26 +1,26 @@
 import {
-  loadHeader,
-  loadFooter,
-  decorateIcons,
-  decorateSections,
-  decorateBlocks,
-  decorateTemplateAndTheme,
-  waitForFirstImage,
-  loadSection,
-  loadSections,
-  loadCSS,
+	loadHeader,
+	loadFooter,
+	decorateIcons,
+	decorateSections,
+	decorateBlocks,
+	decorateTemplateAndTheme,
+	waitForFirstImage,
+	loadSection,
+	loadSections,
+	loadCSS,
 } from './aem.js';
 
 /**
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {
-  await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
-  try {
-    if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
-  } catch (e) {
-    // do nothing
-  }
+	await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
+	try {
+		if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
+	} catch (e) {
+		// do nothing
+	}
 }
 
 /**
@@ -28,28 +28,28 @@ async function loadFonts() {
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
-  try {
-    // auto load `*/fragments/*` references
-    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment'));
-    if (fragments.length > 0) {
-      // eslint-disable-next-line import/no-cycle
-      import('../blocks/fragment/fragment.js').then(({ loadFragment }) => {
-        fragments.forEach(async (fragment) => {
-          try {
-            const { pathname } = new URL(fragment.href);
-            const frag = await loadFragment(pathname);
-            fragment.parentElement.replaceWith(...frag.children);
-          } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Fragment loading failed', error);
-          }
-        });
-      });
-    }
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('Auto Blocking failed', error);
-  }
+	try {
+		// auto load `*/fragments/*` references
+		const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment'));
+		if (fragments.length > 0) {
+			// eslint-disable-next-line import/no-cycle
+			import('../blocks/fragment/fragment.js').then(({ loadFragment }) => {
+				fragments.forEach(async (fragment) => {
+					try {
+						const { pathname } = new URL(fragment.href);
+						const frag = await loadFragment(pathname);
+						fragment.parentElement.replaceWith(...frag.children);
+					} catch (error) {
+						// eslint-disable-next-line no-console
+						console.error('Fragment loading failed', error);
+					}
+				});
+			});
+		}
+	} catch (error) {
+		// eslint-disable-next-line no-console
+		console.error('Auto Blocking failed', error);
+	}
 }
 
 /**
@@ -61,14 +61,14 @@ function buildAutoBlocks(main) {
  * @returns {{ variant: string, wrapper: HTMLElement } | null}
  */
 function getButtonVariant(el) {
-  const strong = el.closest('strong');
-  const em = el.closest('em');
-  if (!strong && !em) return null;
-  if (strong && em) {
-    return { variant: 'accent', wrapper: strong.contains(em) ? strong : em };
-  }
-  if (strong) return { variant: 'primary', wrapper: strong };
-  return { variant: 'secondary', wrapper: em };
+	const strong = el.closest('strong');
+	const em = el.closest('em');
+	if (!strong && !em) return null;
+	if (strong && em) {
+		return { variant: 'accent', wrapper: strong.contains(em) ? strong : em };
+	}
+	if (strong) return { variant: 'primary', wrapper: strong };
+	return { variant: 'secondary', wrapper: em };
 }
 
 /**
@@ -81,40 +81,40 @@ function getButtonVariant(el) {
  * @param {HTMLElement} main The main container element
  */
 function decorateButtons(main) {
-  // decorate link buttons (<a> tags)
-  main.querySelectorAll('p a[href]').forEach((a) => {
-    a.title = a.title || a.textContent;
-    const p = a.closest('p');
-    const text = a.textContent.trim();
+	// decorate link buttons (<a> tags)
+	main.querySelectorAll('p a[href]').forEach((a) => {
+		a.title = a.title || a.textContent;
+		const p = a.closest('p');
+		const text = a.textContent.trim();
 
-    // quick structural checks
-    if (a.querySelector('img') || p.textContent.trim() !== text) return;
+		// quick structural checks
+		if (a.querySelector('img') || p.textContent.trim() !== text) return;
 
-    // skip URL display links
-    try {
-      if (new URL(a.href).href === new URL(text, window.location).href) return;
-    } catch { /* continue */ }
+		// skip URL display links
+		try {
+			if (new URL(a.href).href === new URL(text, window.location).href) return;
+		} catch { /* continue */ }
 
-    const info = getButtonVariant(a);
-    if (!info) return;
+		const info = getButtonVariant(a);
+		if (!info) return;
 
-    p.className = 'button-wrapper';
-    a.className = `button ${info.variant}`;
-    info.wrapper.replaceWith(a);
-  });
+		p.className = 'button-wrapper';
+		a.className = `button ${info.variant}`;
+		info.wrapper.replaceWith(a);
+	});
 
-  // decorate action buttons (<button> tags)
-  main.querySelectorAll('p button').forEach((btn) => {
-    const p = btn.closest('p');
-    if (!p || p.textContent.trim() !== btn.textContent.trim()) return;
+	// decorate action buttons (<button> tags)
+	main.querySelectorAll('p button').forEach((btn) => {
+		const p = btn.closest('p');
+		if (!p || p.textContent.trim() !== btn.textContent.trim()) return;
 
-    const info = getButtonVariant(btn);
-    if (!info) return;
+		const info = getButtonVariant(btn);
+		if (!info) return;
 
-    p.className = 'button-wrapper';
-    btn.className = `button ${info.variant}`;
-    info.wrapper.replaceWith(btn);
-  });
+		p.className = 'button-wrapper';
+		btn.className = `button ${info.variant}`;
+		info.wrapper.replaceWith(btn);
+	});
 }
 
 /**
@@ -123,11 +123,11 @@ function decorateButtons(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  decorateIcons(main);
-  buildAutoBlocks(main);
-  decorateSections(main);
-  decorateBlocks(main);
-  decorateButtons(main);
+	decorateIcons(main, '/docs/library');
+	buildAutoBlocks(main);
+	decorateSections(main);
+	decorateBlocks(main);
+	decorateButtons(main);
 }
 
 /**
@@ -135,23 +135,23 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
-  decorateTemplateAndTheme();
-  const main = doc.querySelector('main');
-  if (main) {
-    decorateMain(main);
-    document.body.classList.add('appear');
-    await loadSection(main.querySelector('.section'), waitForFirstImage);
-  }
+	document.documentElement.lang = 'en';
+	decorateTemplateAndTheme();
+	const main = doc.querySelector('main');
+	if (main) {
+		decorateMain(main);
+		document.body.classList.add('appear');
+		await loadSection(main.querySelector('.section'), waitForFirstImage);
+	}
 
-  try {
-    /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
-    if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
-      loadFonts();
-    }
-  } catch (e) {
-    // do nothing
-  }
+	try {
+		/* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
+		if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
+			loadFonts();
+		}
+	} catch (e) {
+		// do nothing
+	}
 }
 
 /**
@@ -159,19 +159,19 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-  loadHeader(doc.querySelector('header'));
+	loadHeader(doc.querySelector('header'));
 
-  const main = doc.querySelector('main');
-  await loadSections(main);
+	const main = doc.querySelector('main');
+	await loadSections(main);
 
-  const { hash } = window.location;
-  const element = hash ? doc.getElementById(hash.substring(1)) : false;
-  if (hash && element) element.scrollIntoView();
+	const { hash } = window.location;
+	const element = hash ? doc.getElementById(hash.substring(1)) : false;
+	if (hash && element) element.scrollIntoView();
 
-  loadFooter(doc.querySelector('footer'));
+	loadFooter(doc.querySelector('footer'));
 
-  loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
-  loadFonts();
+	loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+	loadFonts();
 }
 
 /**
@@ -179,15 +179,21 @@ async function loadLazy(doc) {
  * without impacting the user experience.
  */
 function loadDelayed() {
-  // eslint-disable-next-line import/no-cycle
-  window.setTimeout(() => import('./delayed.js'), 3000);
-  // load anything that can be postponed to the latest here
+	// eslint-disable-next-line import/no-cycle
+	window.setTimeout(() => import('./delayed.js'), 3000);
+	// load anything that can be postponed to the latest here
 }
 
 async function loadPage() {
-  await loadEager(document);
-  await loadLazy(document);
-  loadDelayed();
+	await loadEager(document);
+	await loadLazy(document);
+	loadDelayed();
+}
+
+// Universal Editor support
+if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
+	// eslint-disable-next-line import/no-unresolved
+	await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
 }
 
 loadPage();

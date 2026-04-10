@@ -1,0 +1,64 @@
+{
+  "definitions": [
+    {
+      "title": "Section",
+      "id": "section",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div></div>"
+        }
+      },
+      "filter": "section",
+      "model": "section"
+    }
+  ],
+  "models": [
+    {
+      "id": "section",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Style",
+          "options": [
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Highlight",
+              "value": "highlight"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "background",
+          "label": "Background",
+          "description": "Background color class (e.g. adobe-red)"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "section",
+      "components": [
+        "hero",
+        "hero-trending",
+        "hero-banner",
+        "cards",
+        "cards-gallery",
+        "cards-article",
+        "columns",
+        "columns-article",
+        "tabs-testimonial",
+        "accordion-faq",
+        "modal",
+        "fragment",
+        "image",
+        "text"
+      ]
+    }
+  ]
+}
