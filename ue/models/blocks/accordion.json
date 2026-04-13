@@ -24,8 +24,8 @@
           "rows": 2,
           "columns": 0,
           "fields": [
-            { "name": "summary", "selector": "summary"},
-            { "name": "text", "selector": "div"}
+            { "name": "summary", "selector": "details> *:nth-child(1) "},
+            { "name": "text", "selector": "details> *:nth-child(2)"}
           ]
         }
       }
