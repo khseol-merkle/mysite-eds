@@ -23,8 +23,8 @@
           "rows": 2,
           "columns": 0,
           "fields": [
-            { "name": "question", "selector": "div > details > summary > p)" },
-            { "name": "answer", "selector": "div:nth-child(2)" }
+            { "name": "summary", "selector": "div:nth-child(1)"},
+            { "name": "text", "selector": "div:nth-child(2)"}
           ]
         }
       }
@@ -37,16 +37,16 @@
         {
           "component": "richtext",
           "valueType": "string",
-          "name": "question",
+          "name": "summary",
           "value": "",
-          "label": "Question",
+          "label": "Summary",
           "required": true
         },
         {
           "component": "richtext",
-          "name": "answer",
+          "name": "text",
           "value": "",
-          "label": "Answer",
+          "label": "Text",
           "valueType": "string",
           "required": true
         }
@@ -56,7 +56,9 @@
   "filters": [
     {
       "id": "accordion-faq",
-      "components": ["accordion-faq-item"]
+      "components": [
+        "accordion-faq-item"
+      ]
     }
   ]
 }
