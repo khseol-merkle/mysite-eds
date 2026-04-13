@@ -20,7 +20,7 @@
       "plugins": {
         "da": {
           "name": "accordion-faq-item",
-          "rows": 2,
+          "rows": 4,
           "columns": 0,
           "fields": [
             { "name": "question", "selector": "div:nth-child(1)" },
