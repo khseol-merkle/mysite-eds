@@ -23,7 +23,7 @@
           "rows": 2,
           "columns": 2,
           "fields": [
-            { "name": "question", "selector": ".accordion-faq-item-label" },
+            { "name": "question", "selector": "accordion-faq-item-label" },
             { "name": "answer", "selector": "div:nth-child(2)" }
           ]
         }
