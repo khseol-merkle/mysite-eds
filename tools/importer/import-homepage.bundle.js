@@ -166,7 +166,7 @@ const CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/accordion-faq.js
+  // tools/importer/parsers/accordion.js
   function parse6(element, { document }) {
     const items = element.querySelectorAll('details.faq-item, details');
     const cells = [];

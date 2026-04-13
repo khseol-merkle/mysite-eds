@@ -31,6 +31,12 @@
     ]
   },
   {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
