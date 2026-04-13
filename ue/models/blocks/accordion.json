@@ -23,7 +23,6 @@
           "rows": 2,
           "columns": 0,
           "fields": [
-            { "name": "answer", "selector": "div:nth-child(1)" },
             { "name": "question", "selector": "div:nth-child(2)" }
           ]
         }
@@ -40,14 +39,6 @@
           "name": "question",
           "value": "",
           "label": "Question",
-          "required": true
-        },
-        {
-          "component": "richtext",
-          "name": "answer",
-          "value": "",
-          "label": "Answer",
-          "valueType": "string",
           "required": true
         }
       ]
