@@ -80,10 +80,14 @@
             "da": {
               "name": "accordion-faq-item",
               "rows": 2,
-              "columns": 1,
+              "columns": 0,
               "fields": [
                 {
                   "name": "question",
+                  "selector": "div > details > summary > p)"
+                },
+                {
+                  "name": "answer",
                   "selector": "div:nth-child(2)"
                 }
               ]
