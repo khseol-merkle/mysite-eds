@@ -84,7 +84,7 @@
               "fields": [
                 {
                   "name": "summary",
-                  "selector": "div:nth-child(1)"
+                  "selector": "summary:nth-child(1)"
                 },
                 {
                   "name": "text",
