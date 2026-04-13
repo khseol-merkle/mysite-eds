@@ -119,7 +119,7 @@
               "fields": [
                 {
                   "name": "summary",
-                  "selector": "details:nth-child(1) > summary > p"
+                  "selector": "div:nth-child(1) summary p"
                 },
                 {
                   "name": "text",
