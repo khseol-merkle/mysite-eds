@@ -66,9 +66,7 @@
           "filter": "accordion-faq",
           "plugins": {
             "da": {
-              "name": "accordion-faq",
-              "rows": 1,
-              "columns": 2
+              "name": "accordion-faq"
             }
           }
         },
@@ -79,8 +77,6 @@
           "plugins": {
             "da": {
               "name": "accordion-faq-item",
-              "rows": 4,
-              "columns": 0,
               "fields": [
                 {
                   "name": "question",
