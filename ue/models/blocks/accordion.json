@@ -21,7 +21,7 @@
         "da": {
           "name": "accordion-faq-item",
           "rows": 2,
-          "columns": 2,
+          "columns": 0,
           "fields": [
             { "name": "question", "selector": "summary>:nth-child(1)" },
             { "name": "answer", "selector": "div:nth-child(2)" }
