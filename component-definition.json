@@ -80,7 +80,7 @@
             "da": {
               "name": "accordion-faq-item",
               "rows": 2,
-              "columns": 0,
+              "columns": 1,
               "fields": [
                 {
                   "name": "question",
