@@ -73,16 +73,16 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "question",
+        "name": "summary",
         "value": "",
-        "label": "Question",
+        "label": "Summary",
         "required": true
       },
       {
         "component": "richtext",
-        "name": "answer",
+        "name": "text",
         "value": "",
-        "label": "Answer",
+        "label": "Text",
         "valueType": "string",
         "required": true
       }

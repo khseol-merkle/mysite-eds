@@ -83,11 +83,11 @@
               "columns": 0,
               "fields": [
                 {
-                  "name": "question",
-                  "selector": "div > details > summary > p)"
+                  "name": "summary",
+                  "selector": "div:nth-child(1)"
                 },
                 {
-                  "name": "answer",
+                  "name": "text",
                   "selector": "div:nth-child(2)"
                 }
               ]
