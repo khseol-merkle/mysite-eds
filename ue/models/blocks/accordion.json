@@ -24,8 +24,8 @@
           "rows": 2,
           "columns": 0,
           "fields": [
-            { "name": "summary", "selector": "details> *:nth-child(1) "},
-            { "name": "text", "selector": "details> *:nth-child(2)"}
+            { "name": "summary", "selector": ".accordion-item-label"},
+            { "name": "text", "selector": ".accordion-item-body"}
           ]
         }
       }
