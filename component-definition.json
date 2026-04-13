@@ -115,11 +115,11 @@
               "fields": [
                 {
                   "name": "summary",
-                  "selector": ".accordion-item-label"
+                  "selector": "div:nth-child(1)"
                 },
                 {
                   "name": "text",
-                  "selector": ".accordion-item-body"
+                  "selector": "div:nth-child(2)"
                 }
               ]
             }
