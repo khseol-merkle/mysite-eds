@@ -119,11 +119,11 @@
               "fields": [
                 {
                   "name": "summary",
-                  "selector": "details summary"
+                  "selector": "summary"
                 },
                 {
                   "name": "text",
-                  "selector": "details div"
+                  "selector": "div"
                 }
               ]
             }
