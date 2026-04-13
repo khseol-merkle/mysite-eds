@@ -21,7 +21,7 @@
       "plugins": {
         "da": {
           "name": "accordion-item",
-          "rows": 2,
+          "rows": 4,
           "columns": 0,
           "fields": [
             { "name": "summary", "selector": ".accordion-item-label"},
