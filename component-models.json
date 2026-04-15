@@ -382,6 +382,19 @@
     ]
   },
   {
+    "id": "search",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "rootPath",
+        "label": "Root Path",
+        "value": "/",
+        "description": "Only show pages under this path (e.g. /blog)"
+      }
+    ]
+  },
+  {
     "id": "tabs-testimonial-item",
     "fields": [
       {

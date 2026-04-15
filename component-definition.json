@@ -446,6 +446,22 @@
           }
         },
         {
+          "title": "Search",
+          "id": "search",
+          "model": "search",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"search\"><div><div>/</div></div></div>",
+              "fields": [
+                {
+                  "name": "rootPath",
+                  "selector": "div>div"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Tabs Testimonial",
           "id": "tabs-testimonial",
           "model": "tabs-testimonial",
