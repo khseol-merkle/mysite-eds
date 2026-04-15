@@ -1,0 +1,36 @@
+{
+  "definitions": [
+    {
+      "title": "Search",
+      "id": "search",
+      "model": "search",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"search\"><div><div>/</div></div></div>",
+          "fields": [
+            {
+              "name": "rootPath",
+              "selector": "div>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "search",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "rootPath",
+          "label": "Root Path",
+          "value": "/",
+          "description": "Only show pages under this path (e.g. /blog)"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
