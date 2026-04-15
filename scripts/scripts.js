@@ -53,10 +53,35 @@ function buildAutoBlocks(main) {
 }
 
 /**
- * Decorates formatted links to style them as buttons.
+ * Determines button variant from authored formatting.
+ * - **bold + _italic_** → accent (high-impact call-to-action)
+ * - **bold** → primary (default)
+ * - _italic_ → secondary (outline)
+ * @param {HTMLElement} el The element to check
+ * @returns {{ variant: string, wrapper: HTMLElement } | null}
+ */
+function getButtonVariant(el) {
+  const strong = el.closest('strong');
+  const em = el.closest('em');
+  if (!strong && !em) return null;
+  if (strong && em) {
+    return { variant: 'accent', wrapper: strong.contains(em) ? strong : em };
+  }
+  if (strong) return { variant: 'primary', wrapper: strong };
+  return { variant: 'secondary', wrapper: em };
+}
+
+/**
+ * Decorates formatted links and buttons to style them as buttons.
+ *
+ * Authoring patterns:
+ * - Link button (navigates): wrap an <a> in **bold** / _italic_ / **_both_**
+ * - Action button (no navigation): wrap a <button> in **bold** / _italic_ / **_both_**
+ *
  * @param {HTMLElement} main The main container element
  */
 function decorateButtons(main) {
+  // decorate link buttons (<a> tags)
   main.querySelectorAll('p a[href]').forEach((a) => {
     a.title = a.title || a.textContent;
     const p = a.closest('p');
@@ -70,24 +95,25 @@ function decorateButtons(main) {
       if (new URL(a.href).href === new URL(text, window.location).href) return;
     } catch { /* continue */ }
 
-    // require authored formatting for buttonization
-    const strong = a.closest('strong');
-    const em = a.closest('em');
-    if (!strong && !em) return;
+    const info = getButtonVariant(a);
+    if (!info) return;
 
     p.className = 'button-wrapper';
-    a.className = 'button';
-    if (strong && em) { // high-impact call-to-action
-      a.classList.add('accent');
-      const outer = strong.contains(em) ? strong : em;
-      outer.replaceWith(a);
-    } else if (strong) {
-      a.classList.add('primary');
-      strong.replaceWith(a);
-    } else {
-      a.classList.add('secondary');
-      em.replaceWith(a);
-    }
+    a.className = `button ${info.variant}`;
+    info.wrapper.replaceWith(a);
+  });
+
+  // decorate action buttons (<button> tags)
+  main.querySelectorAll('p button').forEach((btn) => {
+    const p = btn.closest('p');
+    if (!p || p.textContent.trim() !== btn.textContent.trim()) return;
+
+    const info = getButtonVariant(btn);
+    if (!info) return;
+
+    p.className = 'button-wrapper';
+    btn.className = `button ${info.variant}`;
+    info.wrapper.replaceWith(btn);
   });
 }
 
