@@ -2,11 +2,14 @@ version: 1
 indices:
   site:
     include:
-      - '/**'
+      - '**'
     exclude:
       - '**/drafts/**'
     target: /query-index
     properties:
+      path:
+        select: head > meta[property="og:url"]
+        value: attribute(el, 'content')
       title:
         select: head > meta[property="og:title"]
         value: attribute(el, 'content')
