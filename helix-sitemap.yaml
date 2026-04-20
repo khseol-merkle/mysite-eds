@@ -1,0 +1,5 @@
+sitemaps:
+  mysiteds:
+    source: /query-index.json
+    destination: /sitemap.xml
+
