@@ -2,7 +2,7 @@ version: 1
 indices:
   site:
     include:
-      - '**'
+      - '/**'
     exclude:
       - '**/drafts/**'
     target: /query-index
