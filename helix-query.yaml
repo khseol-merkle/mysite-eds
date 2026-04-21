@@ -1,11 +1,11 @@
 version: 1
 indices:
-  site:
+  repo:
     include:
       - '/**'
     exclude:
       - '**/drafts/**'
-    target: /repoquery-index.json
+    target: /repo-index.json
     properties:
       title:
         select: head > meta[property="og:title"]
