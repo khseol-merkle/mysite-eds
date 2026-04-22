@@ -13,3 +13,9 @@ indices:
       description:
         select: head > meta[name="description"]
         value: attribute(el, 'content')
+  repo:
+    target: /repo-index
+    properties:
+      lastUpdated:
+        select: head > meta[name="last-updated"]
+        value: dateValue(attribute(el, "content"), "YYYY-MM-DD")
