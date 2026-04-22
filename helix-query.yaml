@@ -16,6 +16,6 @@ indices:
   repo:
     target: /repo-index
     properties:
-      lastUpdated:
-        select: head > meta[name="last-updated"]
-        value: dateValue(attribute(el, "content"), "YYYY-MM-DD")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
