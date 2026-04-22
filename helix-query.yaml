@@ -2,7 +2,7 @@ version: 1
 indices:
   repo:
     include:
-      - '/**'
+      - '**'
     exclude:
       - '**/drafts/**'
     target: /repo-index
