@@ -6,6 +6,10 @@ indices:
     exclude:
       - '**/drafts/**'
     target: /query-index
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, 'content')
   repo:
     target: /repo-index
     properties:
